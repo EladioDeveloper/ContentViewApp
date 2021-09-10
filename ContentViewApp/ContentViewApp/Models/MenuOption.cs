@@ -6,10 +6,10 @@ namespace ContentViewApp.Models
 {
     class MenuOption
     {
-        public MenuOption(string image, string title, string subTitle)
+        public MenuOption(string title, string image, string subTitle)
         {
-            Image = image;
             Title = title;
+            Image = image;
             SubTitle = subTitle;
         }
 

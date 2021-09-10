@@ -1,12 +1,75 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ContentViewApp.Views.DiscoveryPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="ContentViewApp.Views.DiscoveryPage"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:ContentViewApp.Views">
+
+    <ScrollView>
+        <Grid 
+            Padding="20"
+            RowDefinitions="Auto, Auto, Auto"
+            ColumnDefinitions="*, *"
+            VerticalOptions="Center"
+            ColumnSpacing="20"
+            RowSpacing="20">
+
+
+            <local:DiscoveryCardView
+                Grid.Row="0"
+                Grid.Column="0"
+                BindingContext="{Binding BarsAndHotelsMenuOption}">
+                <local:DiscoveryCardView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClicked" />
+                </local:DiscoveryCardView.GestureRecognizers>
+            </local:DiscoveryCardView>
+
+            <local:DiscoveryCardView
+                Grid.Row="0"
+                Grid.Column="1"
+                BindingContext="{Binding FineDiningMenuOption}">
+                <local:DiscoveryCardView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClicked" />
+                </local:DiscoveryCardView.GestureRecognizers>
+            </local:DiscoveryCardView>
+
+            <local:DiscoveryCardView
+                Grid.Row="1"
+                Grid.Column="0"
+                BindingContext="{Binding CafesMenuOption}">
+                <local:DiscoveryCardView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClicked" />
+                </local:DiscoveryCardView.GestureRecognizers>
+            </local:DiscoveryCardView>
+
+            <local:DiscoveryCardView
+                Grid.Row="1"
+                Grid.Column="1"
+                BindingContext="{Binding NearbyMenuOption}">
+                <local:DiscoveryCardView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClicked" />
+                </local:DiscoveryCardView.GestureRecognizers>
+            </local:DiscoveryCardView>
+
+            <local:DiscoveryCardView
+                Grid.Row="2"
+                Grid.Column="0"
+                BindingContext="{Binding FastFoodsMenuOption}">
+                <local:DiscoveryCardView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClicked" />
+                </local:DiscoveryCardView.GestureRecognizers>
+            </local:DiscoveryCardView>
+
+            <local:DiscoveryCardView
+                Grid.Row="2"
+                Grid.Column="1"
+                BindingContext="{Binding FeaturedFoodsMenuOption}">
+                <local:DiscoveryCardView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClicked" />
+                </local:DiscoveryCardView.GestureRecognizers>
+            </local:DiscoveryCardView>
+        </Grid>
+    </ScrollView>
 </ContentPage>

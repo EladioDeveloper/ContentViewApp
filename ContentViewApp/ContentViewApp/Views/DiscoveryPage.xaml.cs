@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ContentViewApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,16 @@ namespace ContentViewApp.Views
         public DiscoveryPage()
         {
             InitializeComponent();
+            BindingContext = new MenuOptionViewModel();
+        }
+
+        DiscoveryCardView lastElementSelected = new DiscoveryCardView();
+        public void OnClicked(object sender, EventArgs e)
+        {
+            lastElementSelected.BackgroundColor = Color.White;
+            var elementSelected = (DiscoveryCardView)sender;
+            elementSelected.BackgroundColor = Color.FromHex("#f2ac22");
+            lastElementSelected = elementSelected;
         }
     }
 }

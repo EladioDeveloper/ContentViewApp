@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace ContentViewApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DiscoveryCardView : ContentView
+    public partial class DiscoveryCardView : Frame
     {
         public DiscoveryCardView()
         {
